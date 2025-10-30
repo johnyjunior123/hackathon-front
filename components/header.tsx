@@ -1,28 +1,54 @@
-import { header } from "@/constants/header.constats";
+import { header } from "@/constants/header.constants";
 
 export function Header() {
   return (
-    <header className="flex justify-between items-center p-5 bg-amber-300 rounded-b-2xl shadow-2xl">
-      <button className="hidden"></button>
-      <h2 className="text-[25px]">Logo</h2>
+    <header
+      className="
+        flex justify-between items-center 
+        px-8 py-4 bg-white text-black 
+        border-b border-gray-200 shadow-sm
+      "
+    >
+      <h2 className="text-2xl font-semibold tracking-tight">Logo</h2>
       <nav>
-        <ul className="flex gap-3 items-center">
+        <ul className="flex gap-6 items-center">
           {header.map((item, idx) => (
             <li key={idx}>
-              <a className="text-[20px]" href={item.url}>
+              <a
+                href={item.url}
+                className="
+                  text-[18px] text-gray-800 font-medium 
+                  transition-colors duration-200 hover:text-black
+                "
+              >
                 {item.nome}
               </a>
             </li>
           ))}
+
           <li>
-            <button className="border-2 rounded-lg p-1 text-[18px]">
-              Loguin
-            </button>
+            <a
+              href="/login"
+              className="
+                px-3 py-1 border border-gray-300 rounded-md 
+                text-[16px] text-gray-800 font-medium 
+                transition-all duration-200 hover:bg-black hover:text-white hover:border-black
+              "
+            >
+              Login
+            </a>
           </li>
           <li>
-            <button className="border-2 rounded-lg p-1 text-[18px]">
+            <a
+              href="/registrar"
+              className="
+                px-3 py-1 border border-gray-800 rounded-md 
+                text-[16px] font-semibold text-white bg-black
+                transition-all duration-200 hover:bg-gray-800
+              "
+            >
               Registrar
-            </button>
+            </a>
           </li>
         </ul>
       </nav>
